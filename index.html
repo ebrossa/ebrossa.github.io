@@ -1,174 +1,677 @@
-RG
-		ABOUT
-	aa	PROJECTS
-		FOUNDER
-		CONTACT
-￼
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rainbow Goat Productions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0a0a0a;
+      --dark: #111111;
+      --card: #161616;
+      --border: #2a2a2a;
+      --gold: #c9a84c;
+      --gold-light: #e8c97a;
+      --white: #f5f2ed;
+      --grey: #888;
+      --text: #d4cfc8;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--black);
+      color: var(--text);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 300;
+      font-size: 15px;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
 
-Diverse stories. Authentic voices.
-AN INDEPENDENT PRODUCTION COMPANY
-SCROLL
+    /* NAV */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 48px;
+      background: linear-gradient(to bottom, rgba(10,10,10,0.95) 0%, transparent 100%);
+    }
+    .nav-logo-text {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      letter-spacing: 0.2em;
+      color: var(--white);
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      gap: 40px;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-weight: 400;
+      opacity: 0.8;
+      transition: opacity 0.2s;
+    }
+    .nav-links a:hover { opacity: 1; }
 
-OUR MISSION
-Rainbow Goat is an independent production company dedicated to amplifying diverse voices and human experiences through the art of film and television.
-We champion stories that reflect the full complexity of the human experience — told with authenticity, craft, and a deep commitment to social impact.
-DIVERSE VOICES
-Stories that reflect the world in all its complexity and richness.
-SOCIAL IMPACT
-Narrative as a vehicle for empathy, understanding, and change.
-AUTHENTIC CRAFT
-Excellence in storytelling, from page to screen.
-OUR WORK
-Projects
-￼
-RAIN REIGN 
+    /* HERO */
+    #home {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      background: var(--black);
+      padding: 80px 40px 60px;
+    }
+    .hero-logo-wrap {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 60px;
+    }
+    .hero-logo-wrap::before {
+      content: '';
+      position: absolute;
+      inset: -60px;
+      border-radius: 50%;
+      background: radial-gradient(ellipse at center, rgba(201,168,76,0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .hero-logo {
+      width: 520px;
+      max-width: 80vw;
+      height: auto;
+      display: block;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-logo-fallback {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 72px;
+      font-weight: 300;
+      letter-spacing: 0.15em;
+      color: var(--white);
+      text-align: center;
+      line-height: 1.1;
+    }
+    .hero-divider {
+      width: 48px;
+      height: 1px;
+      background: var(--gold);
+      margin: 0 auto 32px;
+    }
+    .hero-tagline {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 22px;
+      color: var(--white);
+      text-align: center;
+      letter-spacing: 0.05em;
+      opacity: 0.85;
+      margin-bottom: 16px;
+    }
+    .hero-sub {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--grey);
+      text-align: center;
+    }
+    .scroll-indicator {
+      position: absolute;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+    .scroll-indicator span {
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--grey);
+    }
+    .scroll-line {
+      width: 1px;
+      height: 40px;
+      background: linear-gradient(to bottom, var(--gold), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 0.4; }
+      50% { opacity: 1; }
+    }
 
-COMPLETED
-Rain Reign
-FEATURE FILM
-When Superstorm Susan devastates the rural town of Hatford, New York, twelve-year-old Rose Howard's beloved dog Rain goes missing. Rose, who is neurodivergent and raised by a volatile single father with a painful past, is forced to abandon the rules and routine of her daily life to find Rain.
-With the help of her steadfast uncle, she is ultimately confronted with the most difficult decision of her lifetime. Adapted from the Newbery Award-winning novel by Ann M. Martin, Rain Reign explores what one girl's heroic journey can teach us about morality and resilience in the face of hardship.
-STARRING
-Paul Rudd
-Jeremy Sisto
-Gretchen Mol
-Felice Kakaletris
-Adapted from the novel by Ann M. Martin — Newbery Award-winning author
-READ DEADLINE COVERAGE →
-￼
-THIRD CULTURE KIDS 
+    /* SECTIONS */
+    .section-wrap {
+      padding: 100px 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .section-label {
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 48px;
+    }
 
-IN DEVELOPMENT
-Third Culture Kids
-FEATURE FILM
-Taipei, Taiwan, 1986. Two best friends — Leia and May — are living out the last weeks of their senior year in the freewheeling expat community, where the local rules don't apply.
-When the girls sneak away from their senior trip, chasing curiosity and desire, they are faced with some very adult consequences that threaten their futures. A vivid coming-of-age story where the familiar and foreign collide.
-What am I? Who am I? Questions intrinsic to adolescence — made uniquely complicated by growing up as a "foreigner." Culture clashes and cultural connections. Kids being kids but under the most extraordinary of circumstances.
-￼
-REAPERS LAKE 
+    /* ABOUT */
+    #about { border-top: 1px solid var(--border); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .about-text p { margin-bottom: 20px; line-height: 1.8; }
+    .about-values { display: flex; flex-direction: column; gap: 32px; }
+    .value-item { border-left: 1px solid var(--gold); padding-left: 24px; }
+    .value-title {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .value-text { font-size: 14px; color: var(--grey); line-height: 1.6; }
 
-IN DEVELOPMENT
-Reapers Lake
-TV SERIES
-The summer after senior year. Best friends Blake McKenna and Arden Reid are making the most of their last months together — until a former classmate vanishes. As more outcast teens disappear from Peters Lake, Michigan without a trace, Blake and Arden dig deeper while their small town looks away.
-What begins as a missing-persons mystery unravels into something far darker: a cult-like coven promising utopia for society's outcasts, a supernatural plague spreading through the town, and a growing rift between the two friends as Arden is drawn toward the coven's promises.
-A supernatural thriller about belonging, belief, and what we'll sacrifice to feel like we matter.
-FOUNDER
-￼
-ERIKA BURKE ROSSA 
-FOUNDER
-Erika Burke Rossa
-"A global upbringing in Hong Kong and Taiwan gave me a lens that sees across borders — and a deep belief that the most powerful stories are the ones that embrace our differences."
-Erika Burke Rossa is a writer, director, producer, and performer. Born to a Moroccan mother and American father, and raised in Hong Kong and Taiwan, her multicultural upbringing shaped her passion for stories that amplify diverse and underrepresented voices. A Juilliard-trained dancer with a BFA from NYU Tisch and a Masters in Social Work from NYU Silver School of Social Work, she has worked across stage and screen for over two decades with a dedication to storytelling with social impact.
-Her feature film directorial debut, Rain Reign, is adapted from Ann M. Martin's novel. Erika wrote the screenplay, directed, and produced the film, which stars Paul Rudd, Jeremy Sisto, and Felice Kakaletris.
-JUILLIARD-TRAINED
-BFA · NYU TISCH
-MSW · NYU
-NYLA FILM FESTIVAL WINNER
-CANNES SFC
-WRITER · DIRECTOR · PERFORMER
-GET IN TOUCH
-Have a project in mind?
-We welcome inquiries from filmmakers, writers, and partners aligned with our mission.
-YOUR NAME
+    /* PROJECTS */
+    #projects { border-top: 1px solid var(--border); }
+    .projects-header { padding: 0 48px; max-width: 1200px; margin: 0 auto 60px; }
+    .project-card {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 500px;
+      margin-bottom: 2px;
+      background: var(--card);
+      border: 1px solid var(--border);
+    }
+    .project-card.reverse { direction: rtl; }
+    .project-card.reverse > * { direction: ltr; }
+    .project-image {
+      overflow: hidden;
+      position: relative;
+      min-height: 440px;
+    }
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+      position: absolute;
+      inset: 0;
+    }
+    .project-card:hover .project-image img { transform: scale(1.03); }
+    .project-image-placeholder {
+      width: 100%;
+      height: 100%;
+      min-height: 440px;
+      background: #1a1a1a;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--border);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+    .project-info {
+      padding: 60px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .project-status {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 20px;
+    }
+    .status-dot { width: 6px; height: 6px; border-radius: 50%; }
+    .status-dot.completed { background: #6dbf8a; }
+    .status-dot.development { border: 1px solid var(--gold); }
+    .project-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 42px;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 8px;
+      line-height: 1.1;
+    }
+    .project-type {
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 28px;
+    }
+    .project-desc { font-size: 14px; line-height: 1.8; margin-bottom: 12px; }
+    .project-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 17px;
+      color: var(--gold-light);
+      line-height: 1.6;
+      margin: 24px 0;
+      padding-left: 20px;
+      border-left: 2px solid var(--gold);
+    }
+    .starring-label {
+      font-size: 9px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 10px;
+      margin-top: 24px;
+    }
+    .starring-list { display: flex; flex-wrap: wrap; gap: 8px; }
+    .starring-name {
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--white);
+      border: 1px solid var(--border);
+      padding: 5px 14px;
+    }
+    .project-note {
+      font-size: 12px;
+      color: var(--grey);
+      font-style: italic;
+      margin-top: 16px;
+    }
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 20px;
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--gold);
+      text-decoration: none;
+      transition: gap 0.2s;
+    }
+    .project-link:hover { gap: 12px; }
 
-EMAIL ADDRESS
+    /* FOUNDER */
+    #founder { border-top: 1px solid var(--border); }
+    .founder-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .founder-image img {
+      width: 100%;
+      height: 600px;
+      object-fit: cover;
+      object-position: top;
+      display: block;
+      filter: grayscale(15%);
+    }
+    .founder-image-placeholder {
+      width: 100%;
+      height: 600px;
+      background: var(--card);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--border);
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      border: 1px solid var(--border);
+    }
+    .founder-role {
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .founder-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px;
+      font-weight: 300;
+      color: var(--white);
+      margin-bottom: 40px;
+      line-height: 1.1;
+    }
+    .founder-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 20px;
+      line-height: 1.6;
+      color: var(--white);
+      opacity: 0.85;
+      margin-bottom: 40px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+    }
+    .founder-bio p { font-size: 14px; line-height: 1.9; margin-bottom: 18px; }
+    .founder-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 36px; }
+    .tag {
+      font-size: 9px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--grey);
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+    }
 
-INQUIRY TYPE
-              Select one...
-              Collaboration
-              Pitch / Script
-              Press Inquiry
-              General
-            
-MESSAGE
-SEND MESSAGE
-RAINBOW GOAT PRODUCTIONS
-© 2025 Rainbow Goat Productions
-RG
-		ABOUT
-	aa	PROJECTS
-		FOUNDER
-		CONTACT
-￼
+    /* CONTACT */
+    #contact { border-top: 1px solid var(--border); background: var(--dark); }
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+    .contact-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 52px;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.1;
+      margin-bottom: 24px;
+    }
+    .contact-text { font-size: 14px; line-height: 1.8; }
+    .contact-form { display: flex; flex-direction: column; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; }
+    .form-label {
+      font-size: 9px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--grey);
+    }
+    .form-input, .form-select, .form-textarea {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--white);
+      padding: 14px 16px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 13px;
+      font-weight: 300;
+      outline: none;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--gold); }
+    .form-select { appearance: none; cursor: pointer; }
+    .form-select option { background: var(--dark); }
+    .form-textarea { resize: vertical; min-height: 120px; }
+    .btn-submit {
+      background: transparent;
+      border: 1px solid var(--gold);
+      color: var(--gold);
+      padding: 16px 32px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s;
+      align-self: flex-start;
+      margin-top: 8px;
+    }
+    .btn-submit:hover { background: var(--gold); color: var(--black); }
 
-Diverse stories. Authentic voices.
-AN INDEPENDENT PRODUCTION COMPANY
-SCROLL
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 32px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .footer-logo {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--grey);
+    }
+    .footer-copy { font-size: 11px; color: var(--border); }
 
-OUR MISSION
-Rainbow Goat is an independent production company dedicated to amplifying diverse voices and human experiences through the art of film and television.
-We champion stories that reflect the full complexity of the human experience — told with authenticity, craft, and a deep commitment to social impact.
-DIVERSE VOICES
-Stories that reflect the world in all its complexity and richness.
-SOCIAL IMPACT
-Narrative as a vehicle for empathy, understanding, and change.
-AUTHENTIC CRAFT
-Excellence in storytelling, from page to screen.
-OUR WORK
-Projects
-￼
-RAIN REIGN 
+    @media (max-width: 900px) {
+      nav { padding: 20px 24px; }
+      .nav-links { gap: 20px; }
+      .section-wrap { padding: 70px 24px; }
+      .about-grid, .founder-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .project-card { grid-template-columns: 1fr; }
+      .project-card.reverse { direction: ltr; }
+      .section-title, .contact-title, .founder-name { font-size: 38px; }
+      .project-title { font-size: 32px; }
+      .hero-logo { width: 320px; }
+      .projects-header { padding: 0 24px; }
+      .project-info { padding: 40px 24px; }
+    }
+  </style>
+</head>
+<body>
 
-COMPLETED
-Rain Reign
-FEATURE FILM
-When Superstorm Susan devastates the rural town of Hatford, New York, twelve-year-old Rose Howard's beloved dog Rain goes missing. Rose, who is neurodivergent and raised by a volatile single father with a painful past, is forced to abandon the rules and routine of her daily life to find Rain.
-With the help of her steadfast uncle, she is ultimately confronted with the most difficult decision of her lifetime. Adapted from the Newbery Award-winning novel by Ann M. Martin, Rain Reign explores what one girl's heroic journey can teach us about morality and resilience in the face of hardship.
-STARRING
-Paul Rudd
-Jeremy Sisto
-Gretchen Mol
-Felice Kakaletris
-Adapted from the novel by Ann M. Martin — Newbery Award-winning author
-READ DEADLINE COVERAGE →
-￼
-THIRD CULTURE KIDS 
+  <nav>
+    <div class="nav-logo-text">RG</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#founder">Founder</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
 
-IN DEVELOPMENT
-Third Culture Kids
-FEATURE FILM
-Taipei, Taiwan, 1986. Two best friends — Leia and May — are living out the last weeks of their senior year in the freewheeling expat community, where the local rules don't apply.
-When the girls sneak away from their senior trip, chasing curiosity and desire, they are faced with some very adult consequences that threaten their futures. A vivid coming-of-age story where the familiar and foreign collide.
-What am I? Who am I? Questions intrinsic to adolescence — made uniquely complicated by growing up as a "foreigner." Culture clashes and cultural connections. Kids being kids but under the most extraordinary of circumstances.
-￼
-REAPERS LAKE 
+  <!-- HERO -->
+  <div id="home" style="min-height:100vh; display:flex; flex-direction:column; align-items:center; justify-content:center; position:relative; background:var(--black); padding:80px 40px 60px;">
+    <div class="hero-logo-wrap">
+      <img src="images/rainbow-goat-logo.png" alt="Rainbow Goat Productions" class="hero-logo"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+      <div class="hero-logo-fallback" style="display:none;">RAINBOW<br>GOAT</div>
+    </div>
+    <div class="hero-divider"></div>
+    <p class="hero-tagline">Diverse stories. Authentic voices.</p>
+    <p class="hero-sub">An independent production company</p>
+    <div class="scroll-indicator">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </div>
 
-IN DEVELOPMENT
-Reapers Lake
-TV SERIES
-The summer after senior year. Best friends Blake McKenna and Arden Reid are making the most of their last months together — until a former classmate vanishes. As more outcast teens disappear from Peters Lake, Michigan without a trace, Blake and Arden dig deeper while their small town looks away.
-What begins as a missing-persons mystery unravels into something far darker: a cult-like coven promising utopia for society's outcasts, a supernatural plague spreading through the town, and a growing rift between the two friends as Arden is drawn toward the coven's promises.
-A supernatural thriller about belonging, belief, and what we'll sacrifice to feel like we matter.
-FOUNDER
-￼
-ERIKA BURKE ROSSA 
-FOUNDER
-Erika Burke Rossa
-"A global upbringing in Hong Kong and Taiwan gave me a lens that sees across borders — and a deep belief that the most powerful stories are the ones that embrace our differences."
-Erika Burke Rossa is a writer, director, producer, and performer. Born to a Moroccan mother and American father, and raised in Hong Kong and Taiwan, her multicultural upbringing shaped her passion for stories that amplify diverse and underrepresented voices. A Juilliard-trained dancer with a BFA from NYU Tisch and a Masters in Social Work from NYU Silver School of Social Work, she has worked across stage and screen for over two decades with a dedication to storytelling with social impact.
-Her feature film directorial debut, Rain Reign, is adapted from Ann M. Martin's novel. Erika wrote the screenplay, directed, and produced the film, which stars Paul Rudd, Jeremy Sisto, and Felice Kakaletris.
-JUILLIARD-TRAINED
-BFA · NYU TISCH
-MSW · NYU
-NYLA FILM FESTIVAL WINNER
-CANNES SFC
-WRITER · DIRECTOR · PERFORMER
-GET IN TOUCH
-Have a project in mind?
-We welcome inquiries from filmmakers, writers, and partners aligned with our mission.
-YOUR NAME
+  <!-- ABOUT -->
+  <div id="about" style="border-top:1px solid var(--border);">
+    <div class="section-wrap">
+      <div class="section-label">Our Mission</div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Rainbow Goat is an independent production company dedicated to amplifying diverse voices and human experiences through the art of film and television.</p>
+          <p>We champion stories that reflect the full complexity of the human experience — told with authenticity, craft, and a deep commitment to social impact.</p>
+        </div>
+        <div class="about-values">
+          <div class="value-item">
+            <div class="value-title">Diverse Voices</div>
+            <div class="value-text">Stories that reflect the world in all its complexity and richness.</div>
+          </div>
+          <div class="value-item">
+            <div class="value-title">Social Impact</div>
+            <div class="value-text">Narrative as a vehicle for empathy, understanding, and change.</div>
+          </div>
+          <div class="value-item">
+            <div class="value-title">Authentic Craft</div>
+            <div class="value-text">Excellence in storytelling, from page to screen.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-EMAIL ADDRESS
+  <!-- PROJECTS -->
+  <div id="projects" style="border-top:1px solid var(--border); padding: 100px 0;">
+    <div class="projects-header">
+      <div class="section-label">Our Work</div>
+      <h2 class="section-title" style="margin-bottom:0;">Projects</h2>
+    </div>
 
-INQUIRY TYPE
-              Select one...
-              Collaboration
-              Pitch / Script
-              Press Inquiry
-              General
-            
-MESSAGE
-SEND MESSAGE
-RAINBOW GOAT PRODUCTIONS
-© 2025 Rainbow Goat Productions
+    <!-- Rain Reign -->
+    <div class="project-card" style="margin-top:60px;">
+      <div class="project-image">
+        <img src="images/rain-reign.jpg" alt="Rain Reign"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="project-image-placeholder">Rain Reign</div>
+      </div>
+      <div class="project-info">
+        <div class="project-status"><div class="status-dot completed"></div>Completed</div>
+        <h3 class="project-title">Rain Reign</h3>
+        <div class="project-type">Feature Film</div>
+        <p class="project-desc">When Superstorm Susan devastates the rural town of Hatford, New York, twelve-year-old Rose Howard's beloved dog Rain goes missing. Rose, who is neurodivergent and raised by a volatile single father with a painful past, is forced to abandon the rules and routine of her daily life to find Rain.</p>
+        <p class="project-desc">With the help of her steadfast uncle, she is ultimately confronted with the most difficult decision of her lifetime. Adapted from the Newbery Award-winning novel by Ann M. Martin, <em>Rain Reign</em> explores what one girl's heroic journey can teach us about morality and resilience in the face of hardship.</p>
+        <div class="starring-label">Starring</div>
+        <div class="starring-list">
+          <span class="starring-name">Paul Rudd</span>
+          <span class="starring-name">Jeremy Sisto</span>
+          <span class="starring-name">Gretchen Mol</span>
+          <span class="starring-name">Felice Kakaletris</span>
+        </div>
+        <p class="project-note">Adapted from the novel by Ann M. Martin — Newbery Award-winning author</p>
+        <a href="#" class="project-link">Read Deadline Coverage →</a>
+      </div>
+    </div>
+
+    <!-- Third Culture Kids -->
+    <div class="project-card reverse">
+      <div class="project-image">
+        <img src="images/third-culture-kids.jpg" alt="Third Culture Kids"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="project-image-placeholder">Third Culture Kids</div>
+      </div>
+      <div class="project-info">
+        <div class="project-status"><div class="status-dot development"></div>In Development</div>
+        <h3 class="project-title">Third Culture Kids</h3>
+        <div class="project-type">Feature Film</div>
+        <p class="project-desc">Taipei, Taiwan, 1986. Two best friends — Leia and May — are living out the last weeks of their senior year in the freewheeling expat community, where the local rules don't apply.</p>
+        <p class="project-desc">When the girls sneak away from their senior trip, chasing curiosity and desire, they are faced with some very adult consequences that threaten their futures. A vivid coming-of-age story where the familiar and foreign collide.</p>
+        <div class="project-quote">What am I? Who am I? Questions intrinsic to adolescence — made uniquely complicated by growing up as a "foreigner." Culture clashes and cultural connections. Kids being kids but under the most extraordinary of circumstances.</div>
+      </div>
+    </div>
+
+    <!-- Reapers Lake -->
+    <div class="project-card">
+      <div class="project-image">
+        <img src="images/reapers-lake.jpg" alt="Reapers Lake"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="project-image-placeholder">Reapers Lake</div>
+      </div>
+      <div class="project-info">
+        <div class="project-status"><div class="status-dot development"></div>In Development</div>
+        <h3 class="project-title">Reapers Lake</h3>
+        <div class="project-type">TV Series</div>
+        <p class="project-desc">The summer after senior year. Best friends Blake McKenna and Arden Reid are making the most of their last months together — until a former classmate vanishes. As more outcast teens disappear from Peters Lake, Michigan without a trace, Blake and Arden dig deeper while their small town looks away.</p>
+        <p class="project-desc">What begins as a missing-persons mystery unravels into something far darker: a cult-like coven promising utopia for society's outcasts, a supernatural plague spreading through the town, and a growing rift between the two friends as Arden is drawn toward the coven's promises.</p>
+        <div class="project-quote">A supernatural thriller about belonging, belief, and what we'll sacrifice to feel like we matter.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOUNDER -->
+  <div id="founder" style="border-top:1px solid var(--border);">
+    <div class="section-wrap">
+      <div class="section-label">Founder</div>
+      <div class="founder-grid">
+        <div class="founder-image">
+          <img src="images/erika-burke-rossa.jpg" alt="Erika Burke Rossa"
+               onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+          <div class="founder-image-placeholder">Erika Burke Rossa</div>
+        </div>
+        <div>
+          <div class="founder-role">Founder</div>
+          <h2 class="founder-name">Erika Burke Rossa</h2>
+          <div class="founder-quote">"A global upbringing in Hong Kong and Taiwan gave me a lens that sees across borders — and a deep belief that the most powerful stories are the ones that embrace our differences."</div>
+          <div class="founder-bio">
+            <p>Erika Burke Rossa is a writer, director, producer, and performer. Born to a Moroccan mother and American father, and raised in Hong Kong and Taiwan, her multicultural upbringing shaped her passion for stories that amplify diverse and underrepresented voices. A Juilliard-trained dancer with a BFA from NYU Tisch and a Masters in Social Work from NYU Silver School of Social Work, she has worked across stage and screen for over two decades with a dedication to storytelling with social impact.</p>
+            <p>Her feature film directorial debut, <em>Rain Reign</em>, is adapted from Ann M. Martin's novel. Erika wrote the screenplay, directed, and produced the film, which stars Paul Rudd, Jeremy Sisto, and Felice Kakaletris.</p>
+          </div>
+          <div class="founder-tags">
+            <span class="tag">Juilliard-Trained</span>
+            <span class="tag">BFA · NYU Tisch</span>
+            <span class="tag">MSW · NYU</span>
+            <span class="tag">NYLA Film Festival Winner</span>
+            <span class="tag">Cannes SFC</span>
+            <span class="tag">Writer · Director · Performer</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTACT -->
+  <div id="contact" style="border-top:1px solid var(--border); background:var(--dark);">
+    <div class="section-wrap">
+      <div class="contact-grid">
+        <div>
+          <div class="section-label">Get In Touch</div>
+          <h2 class="contact-title">Have a project in mind?</h2>
+          <p class="contact-text">We welcome inquiries from filmmakers, writers, and partners aligned with our mission.</p>
+        </div>
+        <form class="contact-form" onsubmit="return false;">
+          <div class="form-group">
+            <label class="form-label">Your Name</label>
+            <input class="form-input" type="text" placeholder="Full name">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input class="form-input" type="email" placeholder="your@email.com">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Inquiry Type</label>
+            <select class="form-select">
+              <option value="">Select one...</option>
+              <option>Collaboration</option>
+              <option>Pitch / Script</option>
+              <option>Press Inquiry</option>
+              <option>General</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Message</label>
+            <textarea class="form-textarea" placeholder="Tell us about your project or inquiry..."></textarea>
+          </div>
+          <button class="btn-submit" type="submit">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <div class="footer-logo">Rainbow Goat Productions</div>
+    <div class="footer-copy">© 2025 Rainbow Goat Productions</div>
+  </footer>
+
+</body>
+</html>
