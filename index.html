@@ -93,12 +93,13 @@
       pointer-events: none;
     }
     @keyframes logoFadeIn {
-      0% { opacity: 0; transform: translateY(24px) scale(0.97); }
-      100% { opacity: 1; transform: translateY(0) scale(1); }
+      0% { opacity: 0; transform: translateY(24px) scale(0.97); filter: brightness(0); }
+      40% { filter: brightness(0.4); }
+      100% { opacity: 1; transform: translateY(0) scale(1); filter: brightness(1); }
     }
-    @keyframes logoGlow {
-      0%, 100% { filter: drop-shadow(0 0 0px rgba(201,168,76,0)); }
-      50% { filter: drop-shadow(0 0 20px rgba(201,168,76,0.22)); }
+    @keyframes logoShimmer {
+      0%, 100% { filter: brightness(1) drop-shadow(0 0 0px rgba(201,168,76,0)); }
+      50% { filter: brightness(1.08) drop-shadow(0 0 16px rgba(201,168,76,0.18)); }
     }
     .hero-logo {
       width: 680px;
@@ -108,8 +109,8 @@
       position: relative;
       z-index: 1;
       opacity: 0;
-      animation: logoFadeIn 2s cubic-bezier(0.16, 1, 0.3, 1) forwards,
-                 logoGlow 5s ease-in-out 2.2s infinite;
+      animation: logoFadeIn 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+                 logoShimmer 6s ease-in-out 2.8s infinite;
     }
     .hero-logo-fallback {
       font-family: 'Cormorant Garamond', serif;
