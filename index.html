@@ -93,13 +93,14 @@
       pointer-events: none;
     }
     @keyframes logoFadeIn {
-      0% { opacity: 0; transform: translateY(24px) scale(0.97); filter: brightness(0); }
-      40% { filter: brightness(0.4); }
+      0% { opacity: 0; transform: translateY(30px) scale(0.96); filter: brightness(0); }
+      30% { filter: brightness(0.2); }
+      70% { filter: brightness(0.8); }
       100% { opacity: 1; transform: translateY(0) scale(1); filter: brightness(1); }
     }
     @keyframes logoShimmer {
-      0%, 100% { filter: brightness(1) drop-shadow(0 0 0px rgba(201,168,76,0)); }
-      50% { filter: brightness(1.08) drop-shadow(0 0 16px rgba(201,168,76,0.18)); }
+      0%, 100% { filter: brightness(1) drop-shadow(0 0 4px rgba(201,168,76,0.1)); }
+      50% { filter: brightness(1.1) drop-shadow(0 0 28px rgba(201,168,76,0.3)) drop-shadow(0 0 60px rgba(201,168,76,0.1)); }
     }
     .hero-logo {
       width: 680px;
@@ -109,8 +110,8 @@
       position: relative;
       z-index: 1;
       opacity: 0;
-      animation: logoFadeIn 2.5s cubic-bezier(0.16, 1, 0.3, 1) forwards,
-                 logoShimmer 6s ease-in-out 2.8s infinite;
+      animation: logoFadeIn 4s cubic-bezier(0.16, 1, 0.3, 1) forwards,
+                 logoShimmer 7s ease-in-out 4.2s infinite;
     }
     .hero-logo-fallback {
       font-family: 'Cormorant Garamond', serif;
@@ -201,7 +202,7 @@
       grid-template-columns: 1fr 1fr;
       gap: 80px;
       align-items: start;
-      padding-top: 8px;
+      padding-top: 48px;
     }
     .about-text p { margin-bottom: 20px; line-height: 1.8; }
     .about-values { display: flex; flex-direction: column; gap: 32px; }
