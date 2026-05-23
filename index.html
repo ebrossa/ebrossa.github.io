@@ -403,62 +403,32 @@
       padding: 6px 14px;
     }
 
-    /* CONTACT */
-    #contact { border-top: 1px solid var(--border); background: var(--dark); }
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
-      align-items: start;
+    /* SUBMISSIONS */
+    #submissions { border-top: 1px solid var(--border); background: var(--dark); }
+    .submissions-inner {
+      padding: 80px 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 20px;
     }
-    .contact-title {
+    .submissions-title {
       font-family: 'Cormorant Garamond', serif;
-      font-size: 52px;
+      font-size: 42px;
       font-weight: 300;
       color: var(--white);
       line-height: 1.1;
-      margin-bottom: 24px;
     }
-    .contact-text { font-size: 14px; line-height: 1.8; }
-    .contact-form { display: flex; flex-direction: column; gap: 16px; }
-    .form-group { display: flex; flex-direction: column; gap: 6px; }
-    .form-label {
-      font-size: 9px;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--grey);
-    }
-    .form-input, .form-select, .form-textarea {
-      background: transparent;
-      border: 1px solid var(--border);
-      color: var(--white);
-      padding: 14px 16px;
-      font-family: 'Montserrat', sans-serif;
+    .submissions-text {
       font-size: 13px;
-      font-weight: 300;
-      outline: none;
-      transition: border-color 0.2s;
-      width: 100%;
+      color: var(--grey);
+      letter-spacing: 0.05em;
+      max-width: 560px;
+      line-height: 1.8;
     }
-    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--gold); }
-    .form-select { appearance: none; cursor: pointer; }
-    .form-select option { background: var(--dark); }
-    .form-textarea { resize: vertical; min-height: 120px; }
-    .btn-submit {
-      background: transparent;
-      border: 1px solid var(--gold);
-      color: var(--gold);
-      padding: 16px 32px;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 10px;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      cursor: pointer;
-      transition: background 0.2s, color 0.2s;
-      align-self: flex-start;
-      margin-top: 8px;
-    }
-    .btn-submit:hover { background: var(--gold); color: var(--black); }
 
     /* FOOTER */
     footer {
@@ -486,15 +456,16 @@
       }
       .nav-links { gap: 16px; flex-wrap: wrap; }
       .section-wrap { padding: 70px 24px; }
-      .about-grid, .founder-grid, .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .about-grid, .founder-grid { grid-template-columns: 1fr; gap: 48px; }
       .project-card { grid-template-columns: 1fr; }
       .project-card.reverse { direction: ltr; }
-      .section-title, .contact-title, .founder-name { font-size: 38px; }
+      .section-title, .submissions-title, .founder-name { font-size: 38px; }
       .hero-tagline { font-size: 24px; }
       .project-title { font-size: 32px; }
       .hero-logo { width: 320px; }
       .projects-header { padding: 0 24px; }
       .project-info { padding: 40px 24px; }
+      .submissions-inner { padding: 60px 24px; }
     }
   </style>
 </head>
@@ -506,7 +477,6 @@
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#founder">Filmmaker</a></li>
-      <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
 
@@ -583,8 +553,24 @@
       </div>
     </div>
 
-    <!-- Third Culture Kids -->
+    <!-- What Jamie Saw -->
     <div class="project-card reverse">
+      <div class="project-image">
+        <img src="What_Jamie_Saw.jpg" alt="What Jamie Saw"
+             onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+        <div class="project-image-placeholder">What Jamie Saw</div>
+      </div>
+      <div class="project-info">
+        <div class="project-status"><div class="status-dot development"></div>In Development</div>
+        <h3 class="project-title">What Jamie Saw</h3>
+        <div class="project-type">Feature Film</div>
+        <p class="project-desc">Adapted from the award-winning novel by Carolyn Coman, <em>What Jamie Saw</em> is an intimate and raw portrait of a young mother who flees her abusive partner and retreats with her children to a trailer in the Vermont woods in the dead of winter. In the cold and the quiet, they find solace and strength in each other and discover that combatting fear sometimes requires a little magic.</p>
+        <div class="project-quote">Erika Burke Rossa is set to adapt and direct.</div>
+      </div>
+    </div>
+
+    <!-- Third Culture Kids -->
+    <div class="project-card">
       <div class="project-image">
         <img src="third-culture-kids.jpg" alt="Third Culture Kids"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -593,15 +579,15 @@
       <div class="project-info">
         <div class="project-status"><div class="status-dot development"></div>In Development</div>
         <h3 class="project-title">Third Culture Kids</h3>
-        <div class="project-type">Feature Film</div>
-        <p class="project-desc">Taipei, Taiwan, 1986. Two best friends — Leia and May — are living out the last weeks of their senior year in the freewheeling expat community, where the local rules don't apply.</p>
-        <p class="project-desc">When the girls sneak away from their senior trip, chasing curiosity and desire, they are faced with some very adult consequences that threaten their futures. A vivid coming-of-age story where the familiar and foreign collide.</p>
-        <div class="project-quote">What am I? Who am I? Questions intrinsic to adolescence — made uniquely complicated by growing up as a "foreigner." Culture clashes and cultural connections. Kids being kids but under the most extraordinary of circumstances.</div>
+        <div class="project-type">TV Series · Created by Erika Burke Rossa &amp; Alice Kuo Shippee</div>
+        <p class="project-desc">Taipei, Taiwan, 1985. Before cell phones. Before the internet. A misfit crew of expat teens — May, Erin, Jim, and Luca — come of age in the freewheeling bubble of Taipei International School, where the local rules don't apply. Through family crisis, underage drinking, late-night lip-sync battles, and the wild freedoms of a city operating between East and West, they find that "home" is the deep and unlikely connections they forge with each other.</p>
+        <p class="project-desc">Until one of them is murdered — and those connections begin to unravel, forcing them to see their world and each other through a very different lens. <em>Inspired by true events.</em></p>
+        <div class="project-quote">A story about identity, privilege, and the consequences of a life that seemed to have none.</div>
       </div>
     </div>
 
     <!-- Reapers Lake -->
-    <div class="project-card">
+    <div class="project-card reverse">
       <div class="project-image">
         <img src="reapers-lake.jpeg" alt="Reapers Lake"
              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
@@ -610,7 +596,7 @@
       <div class="project-info">
         <div class="project-status"><div class="status-dot development"></div>In Development</div>
         <h3 class="project-title">Reaper's Lake</h3>
-        <div class="project-type">TV Series</div>
+        <div class="project-type">TV Series · Created by Mia Bijou Rossa</div>
         <p class="project-desc">The summer after senior year. Best friends Blake and Arden are making the most of their last months together — until a former classmate vanishes. As more outcast teens disappear from Peters Lake, Michigan without a trace, Blake and Arden dig deeper while their small town looks away.</p>
         <p class="project-desc">What begins as a missing-persons mystery unravels into something far darker: a cult-like coven promising utopia for society's outcasts, a supernatural plague spreading through the town, and a growing rift between the two friends as Arden is drawn toward the coven's promises.</p>
         <div class="project-quote">A supernatural thriller about belonging, belief, and what we'll sacrifice to feel like we matter.</div>
@@ -635,49 +621,15 @@
             <p>Her feature film directorial debut, <em>Rain Reign</em>, is adapted from Newbery Honor-winning author Ann M. Martin's novel, for which Erika also wrote the screenplay. Produced by Rainbow Goat, With a Twist, and Long Odds, in association with City Hill Arts and Ley Line Entertainment, the film stars Paul Rudd, Jeremy Sisto, and Felice Kakaletris.</p>
           </div>
         </div>
-          </div>
-        </div>
       </div>
     </div>
   </div>
 
-  <!-- CONTACT -->
-  <div id="contact" style="border-top:1px solid var(--border); background:var(--dark);">
-    <div class="section-wrap">
-      <div class="contact-grid">
-        <div>
-          <div class="section-label">Get In Touch</div>
-          <h2 class="contact-title">Connect With Us</h2>
-          <p class="contact-text">We welcome inquiries from creatives aligned with our mission.</p>
-        </div>
-        <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="e837395c-c39a-4b4e-9db8-26f2a66d145f">
-          <input type="hidden" name="subject" value="New inquiry from Rainbow Goat Productions">
-          <input type="hidden" name="redirect" value="https://rainbowgoatproductions.com">
-          <div class="form-group">
-            <label class="form-label">Your Name</label>
-            <input class="form-input" type="text" name="name" placeholder="Full name" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Email Address</label>
-            <input class="form-input" type="email" name="email" placeholder="your@email.com" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Inquiry Type</label>
-            <select class="form-select" name="inquiry_type">
-              <option value="">Select one...</option>
-              <option>Pitch / Script</option>
-              <option>Press Inquiry</option>
-              <option>General</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Message</label>
-            <textarea class="form-textarea" name="message" placeholder="Tell us about your project or inquiry..." required></textarea>
-          </div>
-          <button class="btn-submit" type="submit">Send Message</button>
-        </form>
-      </div>
+  <!-- SUBMISSIONS -->
+  <div id="submissions" style="border-top:1px solid var(--border); background:var(--dark);">
+    <div class="submissions-inner">
+      <div class="section-label">Submissions</div>
+      <p class="submissions-text">Rainbow Goat Productions does not accept unsolicited submissions, screenplays, or pitches.</p>
     </div>
   </div>
 
