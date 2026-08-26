@@ -317,12 +317,6 @@
       border: 1px solid var(--border);
       padding: 5px 14px;
     }
-    .project-note {
-      font-size: 12px;
-      color: var(--grey);
-      font-style: italic;
-      margin-top: 16px;
-    }
     .project-link {
       display: inline-flex;
       align-items: center;
@@ -381,17 +375,6 @@
       margin-bottom: 40px;
       line-height: 1.1;
     }
-    .founder-quote {
-      font-family: 'Cormorant Garamond', serif;
-      font-style: italic;
-      font-size: 20px;
-      line-height: 1.6;
-      color: var(--white);
-      opacity: 0.85;
-      margin-bottom: 40px;
-      padding-bottom: 40px;
-      border-bottom: 1px solid var(--border);
-    }
     .founder-bio p { font-size: 14px; line-height: 1.9; margin-bottom: 18px; }
     .founder-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 36px; }
     .tag {
@@ -401,6 +384,16 @@
       color: var(--grey);
       border: 1px solid var(--border);
       padding: 6px 14px;
+    }
+
+    /* PRESS */
+    #press { border-top: 1px solid var(--border); }
+    .press-sub-label {
+      font-size: 10px;
+      letter-spacing: 0.35em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 24px;
     }
 
     /* SUBMISSIONS */
@@ -447,8 +440,8 @@
     .footer-copy { font-size: 11px; color: var(--border); }
 
     @media (max-width: 900px) {
-      nav { 
-        padding: 16px 24px; 
+      nav {
+        padding: 16px 24px;
         flex-direction: column;
         align-items: flex-start;
         gap: 12px;
@@ -477,6 +470,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#founder">Filmmaker</a></li>
+      <li><a href="#press">Press</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -582,7 +576,7 @@
         <h3 class="project-title">Third Culture Kids</h3>
         <div class="project-type">TV Series · Created by Erika Burke Rossa &amp; Alice Kuo Shippee</div>
         <p class="project-desc">Taipei, Taiwan, 1985. Before cell phones. Before the internet. A misfit crew of expat teens come of age in the freewheeling bubble of Taipei International School, where the local rules don't apply. Through family crisis, underage drinking, late-night lip-sync battles, and the wild freedoms of a city operating between East and West, they find that "home" is the deep and unlikely connections they forge with each other.</p>
-        <p class="project-desc">Until one of their classmates is murdered, and those connections begin to unravel, forcing them to see their world and each other through a very different lens. <em>Inspired by true events.</em></p>
+        <p class="project-desc">Until one of their classmates is murdered, and those connections begin to unravel, forcing them to see their world and each other through a very different lens.</p>
         <div class="project-quote">A story about identity, privilege, and the consequences of a life that seemed to have none.</div>
       </div>
     </div>
@@ -626,6 +620,77 @@
     </div>
   </div>
 
+  <!-- PRESS & PUBLICITY -->
+  <div id="press" style="border-top:1px solid var(--border);">
+    <div class="section-wrap">
+      <div class="section-label">Press & Publicity</div>
+      <h2 class="section-title">In the Press</h2>
+
+      <!-- PULL QUOTE -->
+      <div style="border-left:2px solid var(--gold); padding:24px 32px; margin-bottom:60px; background:var(--card);">
+        <div style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:26px; color:var(--white); line-height:1.5; margin-bottom:12px;">
+          "A special film experience you should see."
+        </div>
+        <div style="font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold);">
+          — Pete Hammond, Deadline Hollywood
+        </div>
+      </div>
+
+      <!-- REVIEWS -->
+      <div class="press-sub-label">Reviews</div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:2px; margin-bottom:60px;">
+        <div style="background:var(--card); border:1px solid var(--border); padding:36px;">
+          <div style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--grey); margin-bottom:16px;">Deadline Hollywood</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-style:italic; font-size:18px; color:var(--white); line-height:1.5; margin-bottom:20px;">
+            "Tender and heartwarming… gives this authentic and moving story the feel of a young person's classic."
+          </div>
+          <div style="font-size:11px; color:var(--grey); margin-bottom:20px;">— Pete Hammond · June 2026</div>
+          <a href="https://deadline.com/2026/06/rain-reign-review-paul-rudd-jeremy-sisto-tribeca-festival-1236954393/" target="_blank" style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); text-decoration:none;">Read Review →</a>
+        </div>
+      </div>
+
+      <!-- ARTICLES & INTERVIEWS -->
+      <div class="press-sub-label">Articles & Interviews</div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:2px; margin-bottom:60px;">
+
+        <div style="background:var(--card); border:1px solid var(--border); padding:36px;">
+          <div style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--grey); margin-bottom:16px;">Talkhouse · June 2026</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:300; color:var(--white); line-height:1.2; margin-bottom:16px;">The Anti-Anti-Hero</div>
+          <p style="font-size:13px; color:var(--text); line-height:1.7; margin-bottom:20px;">On why she chose to make a film about quiet goodness — and what her mother taught her about heroism without headlines.</p>
+          <a href="https://talkhouse.com/the-anti-anti-hero" target="_blank" style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); text-decoration:none;">Read Essay →</a>
+        </div>
+
+        <div style="background:var(--card); border:1px solid var(--border); padding:36px;">
+          <div style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--grey); margin-bottom:16px;">Read Bureau · June 2026</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:300; color:var(--white); line-height:1.2; margin-bottom:16px;">Movement, Memory and Making Films</div>
+          <p style="font-size:13px; color:var(--text); line-height:1.7; margin-bottom:20px;">On a creative life that moved through dance, theater, social work, and multiple continents before arriving at filmmaking with unusual depth and clarity.</p>
+          <a href="https://www.readbureau.com/2026/06/01/erika-burke-rossa-movement-memory-and-making-films/" target="_blank" style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); text-decoration:none;">Read Article →</a>
+        </div>
+
+      </div>
+
+      <!-- PODCASTS -->
+      <div class="press-sub-label">Podcasts</div>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:2px;">
+
+        <div style="background:var(--card); border:1px solid var(--border); padding:36px;">
+          <div style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--grey); margin-bottom:16px;">Before The Cheering Started · Budd Mishkin</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:300; color:var(--white); line-height:1.2; margin-bottom:16px;">From Dance to Directing</div>
+          <p style="font-size:13px; color:var(--text); line-height:1.7; margin-bottom:20px;">On the winding path from Juilliard dancer to actor, social worker, and first-time feature film director — and the obstacles, plan B's, and passion that got her there.</p>
+          <a href="https://podcasts.apple.com/us/podcast/erika-burke-rossa-from-dance-to-directing/id1641320284?i=1000770091495" target="_blank" style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); text-decoration:none;">Listen →</a>
+        </div>
+
+        <div style="background:var(--card); border:1px solid var(--border); padding:36px;">
+          <div style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--grey); margin-bottom:16px;">WGCU Public Radio · Three Song Stories</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:22px; font-weight:300; color:var(--white); line-height:1.2; margin-bottom:16px;">Biography Through Music</div>
+          <p style="font-size:13px; color:var(--text); line-height:1.7; margin-bottom:20px;">The three songs that connect her to the memories, places, and people that shaped her life and her filmmaking — from "Summer Breeze" to Duran Duran.</p>
+          <a href="https://podcasts.apple.com/us/podcast/episode-435-erika-burke-rossa/id1358804021?i=1000778490563" target="_blank" style="font-size:10px; letter-spacing:0.2em; text-transform:uppercase; color:var(--gold); text-decoration:none;">Listen →</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <!-- CONTACT -->
   <div id="contact" style="border-top:1px solid var(--border); background:var(--dark);">
     <div class="submissions-inner">
@@ -640,9 +705,8 @@
 
   <footer>
     <div class="footer-logo">Rainbow Goat Productions</div>
-    <div class="footer-copy">© 2025 Rainbow Goat Productions</div>
+    <div class="footer-copy">© 2026 Rainbow Goat Productions</div>
   </footer>
 
 </body>
 </html>
-
